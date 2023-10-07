@@ -1,0 +1,120 @@
+<div
+  class="modal fade"
+  id="ModalCreateUser"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">create User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="max-height: 65vh; overflow-y: auto">
+        <div class="container-fluid pt-2 px-2">
+          <div class="bg-light rounded h-120 p-2">
+            <!-- Konten form disini -->
+            <div class="form-basic mb-3">
+              <label for="createUsername">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createUsername"
+                placeholder="Username"
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createPassword">Password</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createPassword"
+                placeholder="Password"
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createStatus">Status</label>
+              <select class="form-select" id="createStatus">
+                <option value="0">Disable</option>
+                <option value="1">Enable</option>
+              </select>
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createService">Service</label>
+              <select class="form-select" id="createService"></select>
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createGroup">Group</label>
+              <select class="form-select" id="createGroup"></select>
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createFirstname">Firstname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createFirstname"
+                placeholder="Firstname"
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createPhone">Phone</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createPhone"
+                placeholder="Phone"
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createAlamat">Alamat</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createAlamat"
+                placeholder="Alamat"
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="createSN">SN</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createSN"
+                placeholder="SN"
+              />
+            </div>
+            <div class="form-basic">
+              <label for="createComment">Comment</label>
+              <textarea
+                class="form-control"
+                placeholder="Leave a comment here"
+                id="createComment"
+                style="height: 150px"
+              ></textarea>
+            </div>
+
+            <!-- ... -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success mx-3"
+          data-bs-dismiss="modal"
+        >
+          Created
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
