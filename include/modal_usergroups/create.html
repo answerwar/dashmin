@@ -1,36 +1,70 @@
-<div class="modal fade" id="ModalCreateUsergroups" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create NAS</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div
+  class="modal fade"
+  id="ModalCreateUsergroups"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">create User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="max-height: 65vh; overflow-y: auto">
+        <div class="container-fluid pt-2 px-2">
+          <div class="bg-light rounded h-120 p-2">
+            <!-- Konten form disini -->
+            <div class="form-basic mb-3">
+              <label for="createGroupname">Group Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createGroupname"
+                placeholder="Firstname"
+              />
             </div>
-            <div class="modal-body" style="max-height: 65vh; overflow-y: auto;">
-                <div class="container-fluid pt-2 px-2">
-                    <div class="bg-light rounded h-120 p-2">
-                        <!-- Konten form disini -->
-                    <div class="form-basic mb-3">
-                        <label for="basicRouter">Group Name</label>
-                        <input type="text" class="form-control" id="basicRouter" placeholder="Masukan Nama Group" required>
-                    </div>
-                    <div class="form-basic mb-3">
-                        <label for="basicType">IP Address</label>
-                        <input type="text" class="form-control" id="basicType" placeholder="Masukan IP Address">
-                    </div>
-                    <div class="form-basic">
-                        <label for="basicComment">Alamat</label>
-                        <textarea class="form-control" placeholder="Masukan Alamat" id="basicComment"
-                             style="height: 150px;"></textarea>
-                    </div>
-                </div>
+            <div class="form-basic mb-3">
+              <label for="createIpaddr">IP Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="createPhone"
+                placeholder="Phone"
+              />
             </div>
+            <div class="form-basic mb-3">
+              <label for="createAlamat">Alamat</label>
+              <textarea
+                class="form-control"
+                placeholder="Leave a Alamat here"
+                id="createAlamat"
+                style="height: 150px"
+              ></textarea>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success mx-4" data-bs-dismiss="modal">Create</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        
 
+            <!-- ... -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success mx-3"
+          data-bs-dismiss="modal"
+        >
+          Created
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

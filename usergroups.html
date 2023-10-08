@@ -1,207 +1,265 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>DASHMIN - Bootstrap Admin Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    
-</head>
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- include sidebar -->
+
+      <!-- Sidebar Start -->
+      <div class="sidebar pe-4 pb-3">
+        <nav class="navbar bg-light navbar-light">
+          <a href="home.html" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary">
+              <i class="fa fa-hashtag me-2"></i>DASHMIN
+            </h3>
+          </a>
+          <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+              <img
+                class="rounded-circle"
+                src="img/user.jpg"
+                alt=""
+                style="width: 40px; height: 40px"
+              />
+              <div
+                class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"
+              ></div>
             </div>
-        </div>
-        <!-- Spinner End -->
+            <div class="ms-3">
+              <h6 class="mb-0">Jhon Doe</h6>
+              <span>Admin</span>
+            </div>
+          </div>
+          <div class="navbar-nav w-100">
+            <a href="home.html" class="nav-item nav-link"
+              ><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a
+            >
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                ><i class="fa fa-laptop me-2"></i>Elements</a
+              >
+              <div class="dropdown-menu bg-transparent border-0">
+                <a href="button.html" class="dropdown-item">Buttons</a>
+                <a href="typography.html" class="dropdown-item">Typography</a>
+                <a href="element.html" class="dropdown-item">Other Elements</a>
+              </div>
+            </div>
+            <a href="users.html" class="nav-item nav-link"
+              ><i class="fa fa-user me-2"></i>Users</a
+            >
+            <a href="usergroups.html" class="nav-item nav-link active"
+              ><i class="fa fa-users me-2"></i>UserGroups</a
+            >
+            <a href="nas.html" class="nav-item nav-link"
+              ><i class="fa fa-wifi me-2"></i>NAS</a
+            >
+            <a href="services.html" class="nav-item nav-link"
+              ><i class="fa fa-server me-2"></i>Services</a
+            >
+            <a href="onlineusers.html" class="nav-item nav-link"
+              ><i class="fa fa-signal me-2"></i>Service</a
+            >
+          </div>
+        </nav>
+      </div>
 
-        <!-- include sidebar -->
-        
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3 ">
-            <nav class="navbar bg-light navbar-light">
-                <a href="home.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
-                    <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                        <div
-                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
-                        </div>
-                    </div>
-                    <div class="ms-3">
-                        <h6 class="mb-0">Jhon Doe</h6>
-                        <span>Admin</span>
-                    </div>
-                </div>
-                <div class="navbar-nav w-100">
-                    <a href="home.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                                class="fa fa-laptop me-2"></i>Elements</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Buttons</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
-                        </div>
-                    </div>
-                    <a href="users.html" class="nav-item nav-link "><i class="fa fa-user me-2"></i>Users</a>
-                    <a href="usergroups.html" class="nav-item nav-link active"><i class="fa fa-users me-2"></i>UserGroups</a>
-                    <a href="nas.html" class="nav-item nav-link "><i class="fa fa-wifi me-2"></i>NAS</a>
-                    <a href="services.html" class="nav-item nav-link"><i class="fa fa-server me-2"></i>Services</a>
-                    <a href="onlineusers.html" class="nav-item nav-link"><i class="fa fa-signal me-2"></i>Service</a>
+      <!-- Navbar End -->
 
-                </div>
-            </nav>
-        </div>
-        
+      <!-- Content Start -->
+      <div class="content">
+        <!-- include navbar -->
+        <nav
+          class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0"
+        >
+          <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+          </a>
+          <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+          </a>
+          <form class="d-none d-md-flex ms-4">
+            <input
+              class="form-control border-0"
+              type="search"
+              placeholder="Search"
+            />
+          </form>
+          <div class="navbar-nav align-items-center ms-auto">
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+              >
+                <img
+                  class="rounded-circle me-lg-2"
+                  src="img/user.jpg"
+                  alt=""
+                  style="width: 40px; height: 40px"
+                />
+                <span class="d-none d-lg-inline-flex">John Doe</span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
+              >
+                <a href="index.html" class="dropdown-item">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </nav>
         <!-- Navbar End -->
-
-        <!-- Content Start -->
-        <div class="content">
-            <!-- include navbar -->
-                <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                        <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-                    </a>
-                    <a href="#" class="sidebar-toggler flex-shrink-0">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <form class="d-none d-md-flex ms-4">
-                        <input class="form-control border-0" type="search" placeholder="Search">
+        <div class="container-fluid pt-4 px-4">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="bg-light rounded h-100 p-4">
+                <div
+                  class="tablehead d-flex justify-content-between align-items-center"
+                >
+                  <h6 class="mb-4">Tabel Usergroups</h6>
+                  <div class="buttonsearch d-flex align-items-center">
+                    <div class="input-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#ModalCreateUsergroups"
+                        data-text="add" id="btn-create-usergroups"
+                      >
+                        <i class="fa fa-plus me-1"></i>Add Groups
+                      </button>
+                      <div class="input-group-prepend">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-primary"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#searchUsergroupsForm"
+                        >
+                          <i class="fa fa-search me-1"></i>Search
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="collapse" id="searchUsergroupsForm">
+                    <form class="d-md-flex ms-4">
+                      <input
+                        id="searchInput"
+                        class="form-control border-0"
+                        type="search"
+                        placeholder="Search"
+                      />
                     </form>
-                    <div class="navbar-nav align-items-center ms-auto">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <span class="d-none d-lg-inline-flex">John Doe</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                                <a href="index.html" class="dropdown-item">Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            <!-- Navbar End -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                   
-                    <div class="col-12">
-                        <div class="bg-light rounded h-100 p-4">
-                        <div class="tablehead d-flex justify-content-between align-items-center">
-                            <h6 class="mb-4">Tabel Usergroups</h6>
-                            <div class="buttonsearch d-flex align-items-center">
-                                <div class="input-group ">
-                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCreateUsergroups"
-                                        data-text="add"><i class="fa fa-plus me-1"></i>Add User Groups</button>
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input class="form-control border-0" type="search" placeholder="Search">
-                                    <span class="input-group-text bg-white border-0">
-                                        <i id="searchIcon" class="fa fa-search"></i>
-                                    </span>
-                                </div>
-                            </div>
-
-
-                        </div>
-                                <style>
-                                    .table td {
-                                        white-space: nowrap;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                    }
-                                </style>
-
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Grup Name</th>
-                                                <th scope="col">IP Address</th>
-                                                <th scope="col">Alamat</th>
-                                                <th scope="col">Created</th>
-                                                <th scope="col">Updated</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- Data Baris Pertama -->
-                                            <tr>
-                                                <th scope="row" class="text-truncate">1</th>
-                                                <td class="text-truncate">1</td>
-                                                <td class="text-truncate">Doe</td>
-                                                <td class="text-truncate">john@email.com</td>
-                                                <td class="text-truncate">USA</td>
-                                                <td class="text-truncate">123</td>
-                                                <td class="text-truncate">123</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal"
-                                                        data-bs-target="#ModalViewUsergroups" data-text="View"><i class="fa fa-eye me-1"></i>View</button>
-                                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                                                        data-bs-target="#ModalEditUsergroups" data-text="Edit"><i class="fa fa-edit me-1"></i>Edit</button>
-                                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                                        data-bs-target="#ModalDeleteUsergroups" data-text="Delete"><i
-                                                        class="fa fa-trash me-1"></i>Delete</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                    </div>
+                  </div>
                 </div>
+                <style>
+                  .table td {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                </style>
+
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered table-striped"
+                    id="usergroupsTable"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Group ID</th>
+                        <th scope="col">Grup Name</th>
+                        <th scope="col">IP Address</th>
+                        <th scope="col">Alamat</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Updated</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <!-- Table End -->
-
-            <!-- Widgets End -->
-
-            <!-- Footer Start -->
-
-            <div id="footerContainer"></div>
-            <div id="ModalCreateUsergroupsContainer"></div>
-            <div id="ModalViewUsergroupsContainer"></div>
-            <div id="ModalDeleteUsergroupsContainer"></div>
-            <div id="ModalEditUsergroupsContainer"></div>
-                
-            <!-- Footer End -->
+          </div>
         </div>
-        <!-- Content End -->
+        <!-- Table End -->
 
+        <!-- Widgets End -->
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Footer Start -->
+
+        <div id="footerContainer"></div>
+        <div id="ModalCreateUsergroupsContainer"></div>
+        <div id="ModalDeleteUsergroupsContainer"></div>
+        <div id="ModalEditUsergroupsContainer"></div>
+
+        <!-- Footer End -->
+      </div>
+      <!-- Content End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -219,10 +277,7 @@
     <script src="js/main.js"></script>
     <script src="js/validation.js"></script>
     <script src="js/tables.js"></script>
-    <script src="js/modal_usergroups.js"></script>
-
-
-
-</body>
-
+    <script src="js/usergroups/modal_usergroups.js"></script>
+    <script src="js/usergroups/query_usergroups.js"></script>
+  </body>
 </html>

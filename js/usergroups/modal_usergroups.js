@@ -15,14 +15,6 @@
     };
     includeModalDeleteUsergroups(); 
 
-    const ModalViewUsergroupsContainer = document.getElementById('ModalViewUsergroupsContainer');
-    const includeModalViewUsergroups = async () => {
-        const response = await fetch('include/modal_usergroups/view.html');
-        const ModalViewUsergroupsHtml = await response.text();
-        ModalViewUsergroupsContainer.innerHTML = ModalViewUsergroupsHtml;
-    };
-    includeModalViewUsergroups(); 
-
     const ModalEditUsergroupsContainer = document.getElementById('ModalEditUsergroupsContainer');
     const includeModalEditUsergroups = async () => {
         const response = await fetch('include/modal_usergroups/edit.html');
