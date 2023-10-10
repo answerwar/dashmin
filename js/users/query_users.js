@@ -38,6 +38,10 @@ fetch(apiUrl)
     );
 
     var rowNum = 1;
+
+    //create users
+
+    
     // console.log(serviceMap)
     // Loop through the data and create rows in the table
     for (const user of data.message) {
