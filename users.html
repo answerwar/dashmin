@@ -82,7 +82,7 @@
               ></div>
             </div>
             <div class="ms-3">
-              <h6 class="mb-0">Jhon Doe</h6>
+              <h6 class="mb-0">Wifian</h6>
               <span>Admin</span>
             </div>
           </div>
@@ -106,17 +106,17 @@
             <a href="users.html" class="nav-item nav-link active"
               ><i class="fa fa-user me-2"></i>Users</a
             >
-            <a href="usergroups.html" class="nav-item nav-link"
-              ><i class="fa fa-users me-2"></i>User Groups</a
+            <a href="usergroups.html" class="nav-item nav-link "
+              ><i class="fa fa-users me-2"></i>UserGroups</a
             >
             <a href="nas.html" class="nav-item nav-link"
               ><i class="fa fa-wifi me-2"></i>NAS</a
             >
             <a href="services.html" class="nav-item nav-link"
-              ><i class="fa fa-server me-2"></i>Service</a
+              ><i class="fa fa-server me-2"></i>Services</a
             >
             <a href="onlineusers.html" class="nav-item nav-link"
-              ><i class="fa fa-signal me-2"></i>Online User</a
+              ><i class="fa fa-signal me-2"></i>Service</a
             >
           </div>
         </nav>
@@ -136,9 +136,13 @@
           <a href="#" class="sidebar-toggler flex-shrink-0">
             <i class="fa fa-bars"></i>
           </a>
-          <!-- <form id="searchUserForm" class="d-none d-md-flex ms-4">
-                        <input id="searchInput" class="form-control border-0" type="search" placeholder="Search">
-                    </form> -->
+          <form class="d-none d-md-flex ms-4">
+            <input
+              class="form-control border-0"
+              type="search"
+              placeholder="Search"
+            />
+          </form>
           <div class="navbar-nav align-items-center ms-auto">
             <div class="nav-item dropdown">
               <a
@@ -152,7 +156,7 @@
                   alt=""
                   style="width: 40px; height: 40px"
                 />
-                <span class="d-none d-lg-inline-flex">John Doe</span>
+                <span class="d-none d-lg-inline-flex">Wifian</span>
               </a>
               <div
                 class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
@@ -171,27 +175,39 @@
                   class="tablehead d-flex justify-content-between align-items-center"
                 >
                   <h6 class="mb-4">Tabel Users</h6>
-                   <div class="buttonsearch d-flex align-items-center">
+                  <div class="buttonsearch d-flex align-items-center">
                     <div class="input-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-primary btn-add-user"
+                        class="btn btn-sm btn-primary"
                         data-bs-toggle="modal"
-                        data-bs-target="#ModalCreateUser"
+                        data-bs-target="#ModalCreateUsers"
                         data-text="add"
+                        id="btn-create-users"
                       >
-                        <i class="fa fa-user-plus me-1"></i>Add User
+                        <i class="fa fa-plus me-1"></i>Add Users
                       </button>
-                      <div class="input-group-prepend"></div>
-                      <form id="searchUserForm" class="d-none d-md-flex ms-4">
-                        <input
-                          id="searchInput"
-                          class="form-control border-0"
-                          type="search"
-                          placeholder="Search"
-                        />
-                      </form>
+                      <div class="input-group-prepend">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-primary"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#searchUsersForm"
+                        >
+                          <i class="fa fa-search me-1"></i>Search
+                        </button>
+                      </div>
                     </div>
+                  </div>
+                  <div class="collapse" id="searchUsersForm">
+                    <form class="d-md-flex ms-4" onsubmit="return false;">
+                      <input
+                        id="searchInput"
+                        class="form-control border-0"
+                        type="search"
+                        placeholder="Search"
+                      />
+                    </form>
                   </div>
                 </div>
                 <style>

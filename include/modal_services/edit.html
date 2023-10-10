@@ -1,38 +1,80 @@
-<div class="modal fade" id="ModalEditServices" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div
+  class="modal fade"
+  id="ModalEditServices"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="max-height: 65vh; overflow-y: auto">
+        <div class="container-fluid pt-2 px-2">
+          <div class="bg-light rounded h-120 p-2">
+            <!-- Konten form disini -->
+            <!-- Konten form disini -->
+            <div class="form-basic mb-3">
+              <label for="createName">Service Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editName"
+                placeholder="Masukan Nama Service"
+                required
+              />
             </div>
-            <div class="modal-body" style="max-height: 65vh; overflow-y: auto;">
-                <div class="container-fluid pt-2 px-2">
-                    <div class="bg-light rounded h-120 p-2">
-                        <!-- Konten form disini -->
-                        <div class="form-basic mb-3">
-                            <label for="basicService">Service Name</label>
-                            <input type="text" class="form-control" id="basicService" placeholder="Masukan Nama Service" required>
-                        </div>
-                        <div class="form-basic mb-3">
-                            <label for="basicAtribute">Atribute</label>
-                            <input type="text" class="form-control" id="basicAtribute" placeholder="Contoh Mikrotik-Group=ISOLIR" required>
-                        </div>
-                        <div class="form-basic mb-3">
-                            <label for="basicPrice">Price</label>
-                            <input type="text" class="form-control" id="basicPrice" placeholder="Contoh 170000">
-                        </div>
-                        <div class="form-basic">
-                            <label for="basicPrice">Description</label>
-                            <textarea class="form-control" placeholder="Masukan Deskripsi" id="basicPrice" style="height: 150px;"
-                                required></textarea>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-basic mb-3">
+              <label for="editAttribute">Atribute</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editAttribute"
+                placeholder="Contoh Mikrotik-Group=ISOLIR"
+                required
+              />
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary mx-4" data-bs-dismiss="modal">Update</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>   
+            <div class="form-basic mb-3">
+              <label for="editeHarga">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                id="editHarga"
+                placeholder="Contoh 170000"
+              />
+            </div>
+            <div class="form-basic">
+              <label for="editDescription">Description</label>
+              <textarea
+                class="form-control"
+                placeholder="Masukan Deskripsi"
+                id="editDescription"
+                style="height: 150px"
+                required
+              ></textarea>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary mx-4"
+          data-bs-dismiss="modal"
+        >
+          Update
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
     </div>
+  </div>
 </div>

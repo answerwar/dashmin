@@ -82,7 +82,7 @@
               ></div>
             </div>
             <div class="ms-3">
-              <h6 class="mb-0">Jhon Doe</h6>
+              <h6 class="mb-0">Wifian</h6>
               <span>Admin</span>
             </div>
           </div>
@@ -106,7 +106,7 @@
             <a href="users.html" class="nav-item nav-link"
               ><i class="fa fa-user me-2"></i>Users</a
             >
-            <a href="usergroups.html" class="nav-item nav-link "
+            <a href="usergroups.html" class="nav-item nav-link"
               ><i class="fa fa-users me-2"></i>UserGroups</a
             >
             <a href="nas.html" class="nav-item nav-link active"
@@ -156,7 +156,7 @@
                   alt=""
                   style="width: 40px; height: 40px"
                 />
-                <span class="d-none d-lg-inline-flex">John Doe</span>
+                <span class="d-none d-lg-inline-flex">Wifian</span>
               </a>
               <div
                 class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0"
@@ -182,7 +182,8 @@
                         class="btn btn-sm btn-primary"
                         data-bs-toggle="modal"
                         data-bs-target="#ModalCreateNas"
-                        data-text="add" id="btn-create-nas"
+                        data-text="add"
+                        id="btn-create-nas"
                       >
                         <i class="fa fa-plus me-1"></i>Add NAS
                       </button>
@@ -199,7 +200,7 @@
                     </div>
                   </div>
                   <div class="collapse" id="searchNasForm">
-                    <form class="d-md-flex ms-4">
+                   <form class="d-md-flex ms-4" onsubmit="return false;">
                       <input
                         id="searchInput"
                         class="form-control border-0"
@@ -210,58 +211,62 @@
                   </div>
                 </div>
 
-                                <style>
-                                    .table td {
-                                        white-space: nowrap;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                    }
-                                </style>
+                <style>
+                  .table td {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                </style>
 
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-striped" id="nasTable">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Router</th>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Type</th>
-                                                <th scope="col">ports</th>
-                                                <th scope="col">Secret</th>
-                                                <th scope="col">Description</th>
-                                                <th scope="col">Created</th>
-                                                <th scope="col">Updated</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- Data Baris Pertama -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                    </div>
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered table-striped"
+                    id="nasTable"
+                  >
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Router</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">ports</th>
+                        <th scope="col">Secret</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Updated</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Data Baris Pertama -->
+                    </tbody>
+                  </table>
                 </div>
+              </div>
             </div>
-            <!-- Table End -->
-
-            <!-- Widgets End -->
-
-            <!-- Footer Start -->
-
-            <div id="footerContainer"></div>
-            <div id="ModalCreateNasContainer"></div>
-            <div id="ModalDeleteNasContainer"></div>
-            <div id="ModalEditNasContainer"></div>
-                
-            <!-- Footer End -->
+          </div>
         </div>
-        <!-- Content End -->
+        <!-- Table End -->
 
+        <!-- Widgets End -->
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Footer Start -->
+
+        <div id="footerContainer"></div>
+        <div id="ModalCreateNasContainer"></div>
+        <div id="ModalDeleteNasContainer"></div>
+        <div id="ModalEditNasContainer"></div>
+
+        <!-- Footer End -->
+      </div>
+      <!-- Content End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -280,10 +285,6 @@
     <script src="js/validation.js"></script>
     <script src="js/tables.js"></script>
     <script src="js/nas/modal_nas.js"></script>
-     <script src="js/nas/query_nas.js"></script>
-
-
-
-</body>
-
+    <script src="js/nas/query_nas.js"></script>
+  </body>
 </html>

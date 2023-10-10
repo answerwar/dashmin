@@ -258,30 +258,34 @@ fetch(apiUrl)
     console.error("Error fetching data:", error);
   });
 
-// Ambil elemen formulir pencarian dan input pencarian
-const searchUserForm = document.getElementById("searchUserForm");
-const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("keyup", () => {
+    // Menggunakan event "keyup" bukan "input"
+    const searchValue = searchInput.value.trim(); // Dapatkan nilai pencarian
 
-// Tambahkan event listener ke formulir pencarian
-searchUserForm.addEventListener("submit", (event) => {
-  event.preventDefault(); // Mencegah pengiriman formulir secara default
+    // Lakukan tindakan pencarian di sini
+    // Misalnya, Anda dapat memfilter baris tabel berdasarkan nilai pencarian
 
-  const searchValue = searchInput.value.trim(); // Dapatkan nilai pencarian
+    // Contoh: Jika Anda ingin mencari pengguna berdasarkan username
+    const tableRows = document.querySelectorAll("#userTable tbody tr");
+    tableRows.forEach((row) => {
+      const cells = row.querySelectorAll("td"); // Mengambil semua sel dalam baris
+      let isRowMatching = false; // Inisialisasi variabel penanda pencocokan baris
 
-  // Lakukan tindakan pencarian di sini
-  // Misalnya, Anda dapat memfilter baris tabel berdasarkan nilai pencarian
+      // Iterasi melalui semua sel dalam baris
+      cells.forEach((cell) => {
+        const cellText = cell.textContent.toLowerCase();
 
-  // Contoh: Jika Anda ingin mencari pengguna berdasarkan username
-  const tableRows = document.querySelectorAll("#userTable tbody tr");
-  tableRows.forEach((row) => {
-    const usernameCell = row.querySelector("td:nth-child(2)"); // Ganti angka 3 dengan indeks kolom yang sesuai
-    const username = usernameCell.textContent.toLowerCase();
+        // Periksa apakah teks dalam sel cocok dengan nilai pencarian
+        if (cellText.includes(searchValue.toLowerCase())) {
+          isRowMatching = true; // Baris cocok jika salah satu sel cocok
+        }
+      });
 
-    // Periksa apakah username cocok dengan nilai pencarian
-    if (username.includes(searchValue.toLowerCase())) {
-      row.style.display = ""; // Tampilkan baris jika cocok
-    } else {
-      row.style.display = "none"; // Sembunyikan baris jika tidak cocok
-    }
+      // Tampilkan atau sembunyikan baris berdasarkan hasil pencarian
+      if (isRowMatching) {
+        row.style.display = ""; // Tampilkan baris jika cocok
+      } else {
+        row.style.display = "none"; // Sembunyikan baris jika tidak cocok
+      }
+    });
   });
-});
