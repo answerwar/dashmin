@@ -87,6 +87,7 @@ fetch(apiUrl)
           });
       });
     // console.log(serviceMap)
+    var rowNum = 1;
     // Loop through the data and create rows in the table
     for (const nas of data.message) {
       // Ubah format tanggal dan waktu
@@ -95,7 +96,7 @@ fetch(apiUrl)
       // Buat baris tabel
       const row = document.createElement("tr");
       row.innerHTML = `
-                        <td>${nas.id}</td>
+                        <td>${rowNum}</td>
                         <td>${nas.id}</td>
                         <td>${nas.nasname}</td>
                         <td>${nas.shortname}</td>
@@ -121,7 +122,7 @@ fetch(apiUrl)
                         </td>
                     `;
       tableBody.appendChild(row);
-
+      rowNum++;
       // Mendapatkan tombol "Delete" dalam baris ini
       const deleteButton = row.querySelector(".btn-delete-nas");
       // Tambahkan event listener ke tombol "Delete" di dalam baris ini

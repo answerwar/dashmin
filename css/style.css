@@ -294,3 +294,14 @@
     margin-left: 5px;
     /* Jarak antara teks dengan tombol */
 }
+/* CSS untuk tombol "More" yang melayang */
+/* *//* CSS untuk membuat tombol-tombol muncul secara vertikal */
+.additional-buttons.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CSS untuk mengatur jarak antara tombol-tombol */
+.additional-buttons.vertical button {
+    margin-bottom: 5px; /* Atur jarak vertikal antara tombol-tombol */
+}

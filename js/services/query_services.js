@@ -81,7 +81,7 @@ fetch(apiUrl)
           console.error("Error creating user:", error);
         });
     });
-    // console.log(serviceMap)
+    var rowNum = 1;
     // Loop through the data and create rows in the table
     for (const services of data.message) {
       // Ubah format tanggal dan waktu
@@ -91,7 +91,7 @@ fetch(apiUrl)
       // Buat baris tabel
       const row = document.createElement("tr");
       row.innerHTML = `
-                        <td>${services.srvid}</td>
+                        <td>${rowNum}</td>
                         <td>${services.srvid}</td>
                         <td>${services.srvname}</td>
                         <td>${services.custattr}</td>
@@ -115,7 +115,7 @@ fetch(apiUrl)
                         </td>
                     `;
       tableBody.appendChild(row);
-
+      rowNum++;
       // Mendapatkan tombol "Delete" dalam baris ini
       const deleteButton = row.querySelector(".btn-delete-services");
       // Tambahkan event listener ke tombol "Delete" di dalam baris ini

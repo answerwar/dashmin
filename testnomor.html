@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penomoran Otomatis Tabel</title>
+    <script>
+        window.onload = function() {
+            var table = document.getElementById("tabelData");
+            var rows = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < rows.length; i++) {
+                var cell = document.createElement("td");
+                cell.textContent = i;
+                rows[i].insertBefore(cell, rows[i].firstChild);
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="tabelData">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Usia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>John</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Jane</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Bob</td>
+                <td>35</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -83,7 +83,7 @@ fetch(apiUrl)
             console.error("Error creating user:", error);
           });
       });
-    // console.log(serviceMap)
+    var rowNum = 1;
     // Loop through the data and create rows in the table
     for (const usergroups of data.message) {
       // Ubah format tanggal dan waktu
@@ -96,7 +96,7 @@ fetch(apiUrl)
       // Buat baris tabel
       const row = document.createElement("tr");
       row.innerHTML = `
-                        <td>${usergroups.groupid}</td>
+                        <td>${rowNum}</td>
                         <td>${usergroups.groupid}</td>
                         <td>${usergroups.groupname}</td>
                         <td>${usergroups.ipaddr}</td>
@@ -118,7 +118,7 @@ fetch(apiUrl)
                         </td>
                     `;
       tableBody.appendChild(row);
-
+      rowNum++;
       // Mendapatkan tombol "Delete" dalam baris ini
       const deleteButton = row.querySelector(".btn-delete-usergroups");
       // Tambahkan event listener ke tombol "Delete" di dalam baris ini

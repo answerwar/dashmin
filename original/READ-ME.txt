@@ -1,4 +1,4 @@
-  =>  Template Name    : DASHMIN - Bootstrap Admin Template Free
+  =>  Template Name    : Wifian Radius Manager Free
 
   =>  Template Link    : https://htmlcodex.com/bootstrap-admin-template-free
 

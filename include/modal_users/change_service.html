@@ -1,0 +1,82 @@
+
+<div
+  class="modal fade"
+  id="ModalChangeServiceUser"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="max-height: 65vh; overflow-y: auto">
+        <div class="container-fluid pt-2 px-2">
+          <div class="bg-light rounded h-120 p-2">
+            <!-- Konten form disini -->
+            <div class="form-basic mb-3">
+              <label for="CSUsername">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="CSUsername"
+                placeholder="Username" readonly
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="CSFirstname">Firstname</label>
+              <input
+                type="text"
+                class="form-control"
+                id="CSFirstname"
+                placeholder="Firstname" readonly
+              />
+            </div>
+            <div class="form-basic mb-3">
+              <label for="CSService">Service</label>
+              <select class="form-select" id="CSService" ></select>
+            </div>
+            <div class="form-basic mb-3">
+              <label for="CSStatus">Status</label>
+              <select class="form-select" id="CSStatus" disabled>
+                <option value="0">Disable</option>
+                <option value="1">Enable</option>
+              </select>
+            </div>
+            <div class="form-basic">
+              <label for="CSComment">Comment</label>
+              <textarea
+                class="form-control"
+                placeholder="Leave a comment here"
+                id="CSComment"
+                style="height: 150px" readonly
+              ></textarea>
+            </div>
+            <!-- ... -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary mx-5"
+          data-bs-dismiss="modal"
+        >
+          Update
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
