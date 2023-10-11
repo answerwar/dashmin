@@ -9,7 +9,7 @@
 
     const ModalDeleteUsergroupsContainer = document.getElementById('ModalDeleteUsergroupsContainer');
     const includeModalDeleteUsergroups = async () => {
-        const response = await fetch('include/modal_Usergroups/delete.html');
+        const response = await fetch('include/modal_usergroups/delete.html');
         const ModalDeleteUsergroupsHtml = await response.text();
         ModalDeleteUsergroupsContainer.innerHTML = ModalDeleteUsergroupsHtml;
     };
