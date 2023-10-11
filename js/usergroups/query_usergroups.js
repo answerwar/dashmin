@@ -15,7 +15,7 @@ function formatDateTimeToJakartaTime(dateTimeStr) {
   return dateTime.toLocaleString("id-ID", options);
 }
 // URL API
-const apiUrl = "http://127.0.0.1:8000/api/radius/usergroups";
+const apiUrl = "http://172.27.0.153:8000/api/radius/usergroups";
 
 
 // Select the table body
@@ -46,7 +46,7 @@ fetch(apiUrl)
         console.log(payload);
         // URL API untuk membuat pengguna baru
         const createUsergroupUrl =
-          "http://127.0.0.1:8000/api/radius/usergroups";
+          "http://172.27.0.153:8000/api/radius/usergroups";
 
         // Konfigurasi permintaan POST
         const requestOptionsgroup = {
@@ -138,7 +138,7 @@ fetch(apiUrl)
         // Tambahkan event listener ke tombol "Delete" di dalam modal
         deleteButtonmodal.addEventListener("click", (event) => {
           // Mendapatkan ID pengguna dari tombol yang diklik
-          const deleteUserUrl = `http://127.0.0.1:8000/api/radius/usergroups/${usergroupsId}`;
+          const deleteUserUrl = `http://172.27.0.153:8000/api/radius/usergroups/${usergroupsId}`;
           // Konfigurasi permintaan DELETE
           const requestOptions = {
             method: "DELETE",
@@ -197,7 +197,7 @@ fetch(apiUrl)
           };
           console.log(editedData);
           // Konfigurasi permintaan PUT
-          const putUserUrl = `http://127.0.0.1:8000/api/radius/usergroups/${usergroups.groupid}`;
+          const putUserUrl = `http://172.27.0.153:8000/api/radius/usergroups/${usergroups.groupid}`;
           const requestOptions = {
             method: "PUT",
             headers: {

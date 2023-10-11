@@ -15,7 +15,7 @@ function formatDateTimeToJakartaTime(dateTimeStr) {
   return dateTime.toLocaleString("id-ID", options);
 }
 // URL API
-const apiUrl = "http://127.0.0.1:8000/api/radius/nas";
+const apiUrl = "http://172.27.0.153:8000/api/radius/nas";
 
 // Select the table body
 const tableBody = document.querySelector("#nasTable tbody");
@@ -24,6 +24,7 @@ const tableBody = document.querySelector("#nasTable tbody");
 fetch(apiUrl)
   .then((response) => response.json())
   .then(async (data) => {
+    console.log(data.message);
       const createNasButton = document.querySelector(
         "#ModalCreateNas .btn-success"
       );
@@ -49,7 +50,7 @@ fetch(apiUrl)
         };
         // URL API untuk membuat pengguna baru
         const createUsergroupUrl =
-          "http://127.0.0.1:8000/api/radius/nas";
+          "http://172.27.0.153:8000/api/radius/nas";
 
         // Konfigurasi permintaan POST
         const requestOptionsgroup = {
@@ -91,6 +92,7 @@ fetch(apiUrl)
     // Loop through the data and create rows in the table
     for (const nas of data.message) {
       // Ubah format tanggal dan waktu
+
       nas.created_at = formatDateTimeToJakartaTime(nas.created_at);
       nas.updated_at = formatDateTimeToJakartaTime(nas.updated_at);
       // Buat baris tabel
@@ -140,7 +142,7 @@ fetch(apiUrl)
         // Tambahkan event listener ke tombol "Delete" di dalam modal
         deleteButtonmodal.addEventListener("click", (event) => {
           // Mendapatkan ID pengguna dari tombol yang diklik
-          const deleteUserUrl = `http://127.0.0.1:8000/api/radius/nas/${nas.id}`;
+          const deleteUserUrl = `http://172.27.0.153:8000/api/radius/nas/${nas.id}`;
           // Konfigurasi permintaan DELETE
           const requestOptions = {
             method: "DELETE",
@@ -212,7 +214,7 @@ fetch(apiUrl)
           };
           console.log(editedData);
           // Konfigurasi permintaan PUT
-          const putUserUrl = `http://127.0.0.1:8000/api/radius/nas/${nas.id}`;
+          const putUserUrl = `http://172.27.0.153:8000/api/radius/nas/${nas.id}`;
           const requestOptions = {
             method: "PUT",
             headers: {

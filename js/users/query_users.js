@@ -14,9 +14,9 @@ function formatDateTimeToJakartaTime(dateTimeStr) {
   return dateTime.toLocaleString("id-ID", options);
 }
 // URL API
-const apiUrl = "http://127.0.0.1:8000/api/radius/users";
-const grpUrl = `http://127.0.0.1:8000/api/radius/usergroups`;
-const svrUrl = `http://127.0.0.1:8000/api/radius/service`;
+const apiUrl = "http://172.27.0.153:8000/api/radius/users";
+const grpUrl = `http://172.27.0.153:8000/api/radius/usergroups`;
+const svrUrl = `http://172.27.0.153:8000/api/radius/service`;
 
 // Select the table body
 const tableBody = document.querySelector("#userTable tbody");
@@ -147,7 +147,7 @@ fetch(apiUrl)
         // Tambahkan event listener ke tombol "Delete" di dalam modal
         deleteButtonmodal.addEventListener("click", (event) => {
           // Mendapatkan ID pengguna dari tombol yang diklik
-          const deleteUserUrl = `http://127.0.0.1:8000/api/radius/users/${userId}`; // Menggunakan userId
+          const deleteUserUrl = `http://172.27.0.153:8000/api/radius/users/${userId}`; // Menggunakan userId
           // Konfigurasi permintaan DELETE
           const requestOptions = {
             method: "DELETE",
@@ -261,7 +261,7 @@ fetch(apiUrl)
             comment: editCommentInput.value,
           };
           // Konfigurasi permintaan PUT
-          const putUserUrl = `http://127.0.0.1:8000/api/radius/users/${userId}`;
+          const putUserUrl = `http://172.27.0.153:8000/api/radius/users/${userId}`;
           const requestOptions = {
             method: "PUT",
             headers: {
@@ -359,7 +359,7 @@ fetch(apiUrl)
             method: "GET",
           };
           // Menggabungkan URL dengan baseUrl
-          var baseUrl = "http://127.0.0.1:8000/api/radius/" + url;
+          var baseUrl = "http://172.27.0.153:8000/api/radius/" + url;
           // Anda dapat menggunakan baseUrl sesuai kebutuhan Anda, misalnya, mengirim permintaan HTTP ke URL tersebut atau menggunakan URL dalam cara lain.
           console.log(baseUrl);
 
@@ -440,7 +440,7 @@ fetch(apiUrl)
 
           // Menggabungkan URL dengan baseUrl
           var baseUrl =
-            "http://127.0.0.1:8000/api/radius/change_service?" +
+            "http://172.27.0.153:8000/api/radius/change_service?" +
             "username=" +
             CSUsernameInput.value +
             "&srvid=" +
