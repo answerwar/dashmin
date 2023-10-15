@@ -1,7 +1,7 @@
 
     document.addEventListener("DOMContentLoaded", async () => {
         // Mengisi dropdown layanan
-        const svrUrl = `http://172.27.0.153:8000/api/radius/service`;
+        const svrUrl = `http://172.27.0.154:8000/api/radius/service`;
         const svrResponse = await fetch(svrUrl);
         const serviceData = await svrResponse.json();
         const serviceDropdown = document.getElementById("createService");
@@ -24,7 +24,7 @@
         });
 
         // Mengisi dropdown grup pengguna
-        const grpUrl = `http://172.27.0.153:8000/api/radius/usergroups`;
+        const grpUrl = `http://172.27.0.154:8000/api/radius/usergroups`;
         const grpResponse = await fetch(grpUrl);
         const groupData = await grpResponse.json();
         const groupDropdown = document.getElementById("createGroup");
@@ -75,7 +75,7 @@
         };
         // console.log(payload);
         // URL API untuk membuat pengguna baru
-        const createUserUrl = "http://172.27.0.153:8000/api/radius/users";
+        const createUserUrl = "http://172.27.0.154:8000/api/radius/users";
 
         // Konfigurasi permintaan POST
         const requestOptions = {

@@ -1,0 +1,48 @@
+<div class="modal fade" id="ModalCreateNas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create NAS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="max-height: 65vh; overflow-y: auto;">
+                <div class="container-fluid pt-2 px-2">
+                    <div class="bg-light rounded h-120 p-2">
+                        <!-- Konten form disini -->
+                    <div class="form-basic mb-3">
+                        <label for="createRouter">Router</label>
+                        <input type="text" class="form-control" id="createRouter" placeholder="Masukan IP Router" required>
+                    </div>
+                    <div class="form-basic mb-3">
+                        <label for="createName">Nama Router</label>
+                        <input type="text" class="form-control" id="createName" placeholder="Masukan Nama Router" required>
+                    </div>
+                    <div class="form-basic mb-3">
+                        <label for="createType">Type</label>
+                        <input type="text" class="form-control" id="createType" placeholder="Masukan type jika default blank">
+                    </div>
+                    <div class="form-basic mb-3">
+                        <label for="createPort">Port</label>
+                        <input type="text" class="form-control" id="createPort" placeholder="Masukan port jika default blank">
+                    
+                    </div>
+                    <div class="form-basic mb-3">
+                        <label for="createSecret">Secret</label>
+                        <input type="text" class="form-control" id="createSecret" placeholder="Secret" required>
+                    </div>
+                    <div class="form-basic mb-3">
+                        <label for="createDescription">Description</label>
+                        <input type="text" class="form-control" id="createDescription" placeholder="Description" required>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success mx-4" data-bs-dismiss="modal">Create</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

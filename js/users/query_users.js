@@ -14,9 +14,9 @@ function formatDateTimeToJakartaTime(dateTimeStr) {
   return dateTime.toLocaleString("id-ID", options);
 }
 // URL API
-const apiUrl = "http://172.27.0.153:8000/api/radius/users";
-const grpUrl = `http://172.27.0.153:8000/api/radius/usergroups`;
-const svrUrl = `http://172.27.0.153:8000/api/radius/service`;
+const apiUrl = "http://172.27.0.154:8000/api/radius/users";
+const grpUrl = `http://172.27.0.154:8000/api/radius/usergroups`;
+const svrUrl = `http://172.27.0.154:8000/api/radius/service`;
 
 // Select the table body
 const tableBody = document.querySelector("#userTable tbody");
@@ -41,7 +41,6 @@ fetch(apiUrl)
 
     //create users
 
-    
     // console.log(serviceMap)
     // Loop through the data and create rows in the table
     for (const user of data.message) {
@@ -147,7 +146,7 @@ fetch(apiUrl)
         // Tambahkan event listener ke tombol "Delete" di dalam modal
         deleteButtonmodal.addEventListener("click", (event) => {
           // Mendapatkan ID pengguna dari tombol yang diklik
-          const deleteUserUrl = `http://172.27.0.153:8000/api/radius/users/${userId}`; // Menggunakan userId
+          const deleteUserUrl = `http://172.27.0.154:8000/api/radius/users/${userId}`; // Menggunakan userId
           // Konfigurasi permintaan DELETE
           const requestOptions = {
             method: "DELETE",
@@ -157,8 +156,34 @@ fetch(apiUrl)
           fetch(deleteUserUrl, requestOptions)
             .then((response) => {
               if (response.status === 200) {
+                const disconnectUserUrl = `http://172.27.0.154:8000/api/disconnect?username=${user.username}`;
+                // Konfigurasi permintaan DELETE
+                const requestOptions = {
+                  method: "GET",
+                };
+                // Kirim permintaan DELETE
+                fetch(disconnectUserUrl, requestOptions)
+                  .then((response) => {
+                    if (response.status === 200) {
+                      // Jika kode status HTTP adalah 200, maka pengguna berhasil dihapus
+                      console.log("disconnect OK");
+                      // Lakukan pengalihan (reload) halaman atau tindakan lain yang sesuai
+                      location.reload(); // Reload halaman jika diperlukan
+                    } else {
+                      // Tangani respons jika kode status HTTP bukan 200
+                      response.json().then((data) => {
+                        console.error("Error disconnect users:", data);
+                        location.reload();
+                      });
+                    }
+                  })
+                  .catch((error) => {
+                    // Tangani kesalahan jika ada
+                    console.error("Error disconnect users:", error);
+                  });
                 // Jika kode status HTTP adalah 200, maka pengguna berhasil dihapus
                 alert("Pengguna berhasil dihapus.");
+
                 // Lakukan pengalihan (reload) halaman atau tindakan lain yang sesuai
                 location.reload(); // Reload halaman jika diperlukan
               } else {
@@ -261,7 +286,7 @@ fetch(apiUrl)
             comment: editCommentInput.value,
           };
           // Konfigurasi permintaan PUT
-          const putUserUrl = `http://172.27.0.153:8000/api/radius/users/${userId}`;
+          const putUserUrl = `http://172.27.0.154:8000/api/radius/users/${userId}`;
           const requestOptions = {
             method: "PUT",
             headers: {
@@ -336,7 +361,6 @@ fetch(apiUrl)
             break; // Keluar dari loop setelah menemukan kecocokan
           }
         }
-        console.log(DEStatusInput.value);
         // Mendapatkan tombol "Update" dalam modal edit
         const DisableEnableButton = document.querySelector(
           "#ModalDisableEnableUser .btn-primary"
@@ -359,14 +383,38 @@ fetch(apiUrl)
             method: "GET",
           };
           // Menggabungkan URL dengan baseUrl
-          var baseUrl = "http://172.27.0.153:8000/api/radius/" + url;
+          var baseUrl = "http://172.27.0.154:8000/api/radius/" + url;
           // Anda dapat menggunakan baseUrl sesuai kebutuhan Anda, misalnya, mengirim permintaan HTTP ke URL tersebut atau menggunakan URL dalam cara lain.
-          console.log(baseUrl);
 
           // Kirim permintaan PUT
           fetch(baseUrl, requestOptions)
             .then((response) => {
               if (response.status === 200) {
+                const disconnectUserUrl = `http://172.27.0.154:8000/api/disconnect?username=${user.username}`;
+                // Konfigurasi permintaan DELETE
+                const requestOptions = {
+                  method: "GET",
+                };
+                // Kirim permintaan DELETE
+                fetch(disconnectUserUrl, requestOptions)
+                  .then((response) => {
+                    if (response.status === 200) {
+                      // Jika kode status HTTP adalah 200, maka pengguna berhasil dihapus
+                      console.log(`disconnect OK ${disconnectUserUrl}`);
+                      // Lakukan pengalihan (reload) halaman atau tindakan lain yang sesuai
+                      location.reload(); // Reload halaman jika diperlukan
+                    } else {
+                      // Tangani respons jika kode status HTTP bukan 200
+                      response.json().then((data) => {
+                        console.error("Error disconnect users:", data);
+                        location.reload();
+                      });
+                    }
+                  })
+                  .catch((error) => {
+                    // Tangani kesalahan jika ada
+                    console.error("Error disconnect users:", error);
+                  });
                 // Jika berhasil, tampilkan pesan sukses atau lakukan tindakan lain yang sesuai
                 alert(`Data pengguna berhasil diperbarui. `);
                 // Tutup modal edit
@@ -440,25 +488,50 @@ fetch(apiUrl)
 
           // Menggabungkan URL dengan baseUrl
           var baseUrl =
-            "http://172.27.0.153:8000/api/radius/change_service?" +
+            "http://172.27.0.154:8000/api/radius/change_service?" +
             "username=" +
             CSUsernameInput.value +
             "&srvid=" +
             CSServiceInput.value;
           // Anda dapat menggunakan baseUrl sesuai kebutuhan Anda, misalnya, mengirim permintaan HTTP ke URL tersebut atau menggunakan URL dalam cara lain.
-          console.log(baseUrl);
-
 
           // Kirim permintaan GET
-                    const requestOptions = {
-                      method: "GET",
-                    };
+          const requestOptions = {
+            method: "GET",
+          };
 
           fetch(baseUrl, requestOptions)
             .then((response) => {
               if (response.status === 200) {
+                const disconnectUserUrl = `http://172.27.0.154:8000/api/disconnect?username=${user.username}`;
+                // Konfigurasi permintaan DELETE
+                const requestOptions = {
+                  method: "GET",
+                };
+                // Kirim permintaan DELETE
+                fetch(disconnectUserUrl, requestOptions)
+                  .then((response) => {
+                    if (response.status === 200) {
+                      // Jika kode status HTTP adalah 200, maka pengguna berhasil dihapus
+                      console.log("disconnect OK");
+                      // Lakukan pengalihan (reload) halaman atau tindakan lain yang sesuai
+                      location.reload(); // Reload halaman jika diperlukan
+                    } else {
+                      // Tangani respons jika kode status HTTP bukan 200
+                      response.json().then((data) => {
+                        console.error("Error disconnect users:", data);
+                        location.reload();
+                      });
+                    }
+                  })
+                  .catch((error) => {
+                    // Tangani kesalahan jika ada
+                    console.error("Error disconnect users:", error);
+                  });
                 // Jika berhasil, tampilkan pesan sukses atau lakukan tindakan lain yang sesuai
-                alert(`Pergantin service berhasil, Data User pengguna berhasil diperbarui. `);
+                alert(
+                  `Pergantin service berhasil, Data User pengguna berhasil diperbarui. `
+                );
                 // Tutup modal edit
                 $("#ModalChangeServiceUser").modal("hide");
                 // Lakukan pengalihan (reload) halaman atau tindakan lain yang sesuai

@@ -66,7 +66,8 @@
         <nav class="navbar bg-light navbar-light">
           <a href="home.html" class="navbar-brand mx-4 mb-3">
             <h3 class="text-primary">
-              <i></i>RADIUS <br> Manager
+              <i></i>RADIUS <br />
+              Manager
             </h3>
           </a>
           <div class="d-flex align-items-center ms-4 mb-4">
@@ -96,15 +97,27 @@
             <a href="usergroups.html" class="nav-item nav-link"
               ><i class="fa fa-users me-2"></i>UserGroups</a
             >
-            <a href="nas.html" class="nav-item nav-link active"
+            <a href="nas.html" class="nav-item nav-link"
               ><i class="fa fa-wifi me-2"></i>NAS</a
             >
             <a href="services.html" class="nav-item nav-link"
               ><i class="fa fa-server me-2"></i>Services</a
             >
-            <a href="onlineusers.html" class="nav-item nav-link"
-              ><i class="fa fa-signal me-2"></i>Service</a
+            <a href="onlineusers.html" class="nav-item nav-link active"
+              ><i class="fa fa-signal me-2"></i>Online Users</a
             >
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                ><i class="far fa-file-alt me-2"></i>More Tools</a
+              >
+              <div class="dropdown-menu bg-transparent border-0">
+                <a href="#" class="dropdown-item" id="restartFreeradius">Restart Freeradius</a>
+                <a href="#" class="dropdown-item" id="restartWebService">Restart Web Service</a>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
@@ -161,33 +174,23 @@
                 <div
                   class="tablehead d-flex justify-content-between align-items-center"
                 >
-                  <h6 class="mb-4">Tabel Nas</h6>
+                  <h6 class="mb-4">Tabel Users</h6>
                   <div class="buttonsearch d-flex align-items-center">
                     <div class="input-group">
-                      <button
-                        type="button"
-                        class="btn btn-sm btn-primary"
-                        data-bs-toggle="modal"
-                        data-bs-target="#ModalCreateNas"
-                        data-text="add"
-                        id="btn-create-nas"
-                      >
-                        <i class="fa fa-plus me-1"></i>Add NAS
-                      </button>
                       <div class="input-group-prepend">
                         <button
                           type="button"
                           class="btn btn-sm btn-primary"
                           data-bs-toggle="collapse"
-                          data-bs-target="#searchNasForm"
+                          data-bs-target="#searchOnlineusersForm"
                         >
                           <i class="fa fa-search me-1"></i>Search
                         </button>
                       </div>
                     </div>
                   </div>
-                  <div class="collapse" id="searchNasForm">
-                   <form class="d-md-flex ms-4" onsubmit="return false;">
+                  <div class="collapse" id="searchOnlineusersForm">
+                    <form class="d-md-flex ms-4" onsubmit="return false;">
                       <input
                         id="searchInput"
                         class="form-control border-0"
@@ -197,7 +200,6 @@
                     </form>
                   </div>
                 </div>
-
                 <style>
                   .table td {
                     white-space: nowrap;
@@ -205,45 +207,114 @@
                     text-overflow: ellipsis;
                   }
                 </style>
-
                 <div class="table-responsive">
                   <table
                     class="table table-bordered table-striped"
-                    id="nasTable"
+                    id="onlineusersTable"
                   >
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">ID</th>
+                        <th scope="col">Rad id</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ip Address</th>
+                        <th scope="col">Interface ID</th>
                         <th scope="col">Router</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">ports</th>
-                        <th scope="col">Secret</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Name Router</th>
+                        <th scope="col">Start Time</th>
+                        <th scope="col">Durasi</th>
+                        <th scope="col">Download</th>
+                        <th scope="col">Upload</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <!-- Data Baris Pertama -->
-                    </tbody>
+                    <tbody></tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Table End -->
 
+        <!-- Table End -->
+<!-- Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal Title</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        Isi modal disini...
+      </div>
+    </div>
+  </div>
+</div>
         <!-- Widgets End -->
 
+        <style>
+          .active {
+            background-color: #007bff;
+            color: #fff;
+          }
+        </style>
         <!-- Footer Start -->
 
         <div id="footerContainer"></div>
-        <div id="ModalCreateNasContainer"></div>
-        <div id="ModalDeleteNasContainer"></div>
-        <div id="ModalEditNasContainer"></div>
 
+        <!-- Modal Delete User -->
+        <div
+          class="modal fade"
+          id="ModalDisconnect"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="modal-body"
+                style="max-height: 30vh; overflow-y: auto"
+              >
+                <div class="container-fluid pt-2 px-2">
+                  <div class="bg-light rounded h-50 p-2">
+                    <!-- Konten form disini -->
+                    <h3>Apakah Anda Yakin Akan Menghapus User xxx</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger mx-3"
+                  data-bs-dismiss="modal"
+                >
+                  Disconnect
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div id="ModalDisconnectContainer"></div> -->
         <!-- Footer End -->
       </div>
       <!-- Content End -->
@@ -269,7 +340,20 @@
     <script src="js/main.js"></script>
     <script src="js/validation.js"></script>
     <script src="js/tables.js"></script>
-    <script src="js/nas/modal_nas.js"></script>
-    <script src="js/nas/query_nas.js"></script>
+    <script src="js/online_users/query_onlineusers.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- <script>
+  $(document).ready(function() {
+    $("#restartFreeradius").click(function() {
+      $("#myModal").modal("show");
+    });
+
+    $("#restartWebService").click(function() {
+      $("#myModal").modal("show");
+    });
+  });
+</script> -->
   </body>
 </html>

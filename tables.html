@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Example</title>
+</head>
+<body>
+    <table id="empInfo">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Joining Date</th>
+            <th>Designation</th>
+        </thead>
+        <tr>
+            <td>Mary</td>
+            <td>28</td>
+            <td>16May2022</td>
+            <td>HR</td>
+        </tr>
+        <tr>
+        <td>28</td>
+
+<td>16May2022</td>
+
+<td>HR</td>
+
+</tr>
+
+<tr>
+
+<td>Steven</td>
+
+<td>29</td>
+
+<td>18May2020</td>
+
+<td>Assistant</td>
+
+</tr>
+
+<tr>
+
+<td>John</td>
+
+<td>32</td>
+
+<td>15March2017</td>
+
+<td>Accountant</td>
+
+</tr>
+
+<tr>
+
+<td>Covin</td>
+
+<td>25</td>
+
+<td>14April2019</td>
+
+<td>MTO</td>
+
+</tr>
+
+<tr>
+
+<td>Cain</td>
+
+<td>27</td>
+
+<td>5Sep2019</td>
+
+<td>Assistant</td>
+
+</tr>
+
+<tr>
+
+<td>Marco</td>
+
+<td>23</td>
+
+<td>21Jan2018</td>
+
+<td>Accounts</td>
+
+</tr>
+
+<tr>
+
+<td>Rhonda</td>
+
+<td>24</td>
+
+<td>3Jan2020</td>
+
+<td>HR</td>
+
+</tr>
+
+<tr>
+
+<td>Peale</td>
+
+<td>30</td>
+
+<td>25March2018</td>
+
+<td>HR</td>
+
+</tr>
+
+<tr>
+
+<td>Dan</td>
+
+<td>21</td>
+
+<td>9July2021</td>
+
+<td>Assistant</td>
+
+</tr>
+
+<tr>
+
+<td>Susan</td>
+
+<td>28</td>
+
+<td>28Nov2022</td>
+
+<td>MTO</td>
+
+</tr>
+
+<tr>
+
+<td>Covey</td>
+
+<td>29</td>
+
+<td>6July2021</td>
+
+<td>Accounts</td>
+
+</tr>
+        <!-- Add more rows here -->
+    </table>
+    <div id="pagination" class="mt-4" style="display: flex; flex-wrap: wrap;"></div>
+
+         <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const table = document.getElementById("empInfo");
+    const rowsPerPage = 10; // You can change the number of rows per page
+    const rowCount = table.rows.length - 1; // Exclude header row
+    const pageCount = Math.ceil(rowCount / rowsPerPage);
+    let currentPage = 1;
+
+    function showPage(page) {
+        const start = (page - 1) * rowsPerPage + 1;
+        const end = Math.min(start + rowsPerPage - 1, rowCount);
+
+        for (let i = 1; i <= rowCount; i++) {
+            const row = table.rows[i];
+            if (i >= start && i <= end) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    }
+
+    function createPaginationButtons() {
+        const paginationDiv = document.getElementById("pagination");
+
+        for (let i = 1; i <= pageCount; i++) {
+            const button = document.createElement("button");
+            button.innerText = i;
+            if (i === currentPage) {
+                button.classList.add("active");
+            }
+            button.addEventListener("click", function (event) {
+                const selectedPage = parseInt(event.target.innerText);
+                if (selectedPage !== currentPage) {
+                    const currentActiveButton = paginationDiv.querySelector(".active");
+                    if (currentActiveButton) {
+                        currentActiveButton.classList.remove("active");
+                    }
+                    currentPage = selectedPage;
+                    showPage(currentPage);
+                    event.target.classList.add("active");
+                }
+            });
+            paginationDiv.appendChild(button);
+        }
+    }
+
+    createPaginationButtons();
+    showPage(currentPage);
+    console.log("Page loaded");
+});
+    </script>
+</body>
+</html>
